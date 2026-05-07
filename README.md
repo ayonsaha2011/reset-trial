@@ -5,8 +5,6 @@
 
 **Reset Trial** is a sleek, modern, and lightweight GUI application built in Rust. It is designed to help users quickly find and manage leftover files and directories associated with trial software, ensuring a clean system.
 
-![App Icon](assets/logo.png)
-
 ## ✨ Features
 
 - **⚡ Asynchronous Search**: High-performance file system scanning that keeps the UI fluid and responsive.
