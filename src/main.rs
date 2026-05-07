@@ -1,11 +1,10 @@
-use eframe::{egui, epaint::ImageData, IconData};
+use eframe::egui;
+use egui::IconData;
 use serde::{Deserialize, Serialize};
-use std::{env, fs};
+use std::fs;
 use std::path::{Path, PathBuf};
-use std::sync::Arc;
 use walkdir::WalkDir;
 use image::ImageFormat;
-use std::fs::File;
 use std::io::Cursor;
 
 const HISTORY_FILE: &str = "search_history.json";
@@ -344,16 +343,13 @@ fn load_icon() -> Option<IconData> {
 fn main() -> Result<(), eframe::Error> {
     let mut options = eframe::NativeOptions::default();
 
-    // Set app icon
     if let Some(icon_data) = load_icon() {
-        options.icon_data = Some(icon_data);
+        options.viewport = options.viewport.with_icon(icon_data);
     }
-
-    options.resizable = true;
 
     eframe::run_native(
         "Reset Trial App",
         options,
-        Box::new(|_cc| Box::new(ResetTrialApp::new())),
+        Box::new(|_cc| Ok(Box::new(ResetTrialApp::new()))),
     )
 }
