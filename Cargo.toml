@@ -1,0 +1,24 @@
+[package]
+name = "reset-trial"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ayon Saha <ayonsaha2011@gmail.com>"]
+
+[dependencies]
+dirs = "5.0.1"
+eframe = "0.23"
+walkdir = "2.5.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+image = "0.24"
+
+
+[package.metadata.bundle]
+name = "Reset Trial"
+identifier = "com.tatiap.resettrial"
+icon = ["assets/logo.icns", "assets/logo.png"] # Optional: Provide a .icns file for the app icon
+resources = ["assets/logo.png"]
+short_description = "A simple GUI app for resetting trial files."
+long_description = """Reset Trial is a lightweight GUI tool designed to help locate and
+remove files and directories associated with trial software."""
+macos_minimum_system_version = "10.13" # Example: Adjust based on your requirements
